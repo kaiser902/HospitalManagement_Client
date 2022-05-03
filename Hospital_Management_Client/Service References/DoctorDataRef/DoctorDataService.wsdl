@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DoctorDataService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8005/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8005/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8005/?xsd=xsd2" />
+      <xsd:import schemaLocation="http://localhost:8005/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DataModelLib" />
+      <xsd:import schemaLocation="http://localhost:8005/?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDoctorDataService_GetDoctorList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorList" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorDataService_GetDoctorList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorDataService_Add_Doctor_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add_Doctor" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorDataService_Add_Doctor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Add_DoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorDataService_Update_Doctor_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_Doctor" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorDataService_Update_Doctor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_DoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorDataService_Delete_Doctor_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_Doctor" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorDataService_Delete_Doctor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_DoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorDataService_GetRegions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegions" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorDataService_GetRegions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorDataService_AuthenticateDoctorByRegion_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateDoctorByRegion" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorDataService_AuthenticateDoctorByRegion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateDoctorByRegionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorDataService_GetDoctorIdByRegion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorIdByRegion" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorDataService_GetDoctorIdByRegion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorIdByRegionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorDataService_VerifyDoctor_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyDoctor" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorDataService_VerifyDoctor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyDoctorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDoctorDataService">
+    <wsdl:operation name="GetDoctorList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorDataService/GetDoctorList" message="tns:IDoctorDataService_GetDoctorList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorDataService/GetDoctorListResponse" message="tns:IDoctorDataService_GetDoctorList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_Doctor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorDataService/Add_Doctor" message="tns:IDoctorDataService_Add_Doctor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorDataService/Add_DoctorResponse" message="tns:IDoctorDataService_Add_Doctor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Doctor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorDataService/Update_Doctor" message="tns:IDoctorDataService_Update_Doctor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorDataService/Update_DoctorResponse" message="tns:IDoctorDataService_Update_Doctor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Doctor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorDataService/Delete_Doctor" message="tns:IDoctorDataService_Delete_Doctor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorDataService/Delete_DoctorResponse" message="tns:IDoctorDataService_Delete_Doctor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorDataService/GetRegions" message="tns:IDoctorDataService_GetRegions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorDataService/GetRegionsResponse" message="tns:IDoctorDataService_GetRegions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateDoctorByRegion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorDataService/AuthenticateDoctorByRegion" message="tns:IDoctorDataService_AuthenticateDoctorByRegion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorDataService/AuthenticateDoctorByRegionResponse" message="tns:IDoctorDataService_AuthenticateDoctorByRegion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorIdByRegion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorDataService/GetDoctorIdByRegion" message="tns:IDoctorDataService_GetDoctorIdByRegion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorDataService/GetDoctorIdByRegionResponse" message="tns:IDoctorDataService_GetDoctorIdByRegion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyDoctor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorDataService/VerifyDoctor" message="tns:IDoctorDataService_VerifyDoctor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorDataService/VerifyDoctorResponse" message="tns:IDoctorDataService_VerifyDoctor_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDoctorDataService" type="tns:IDoctorDataService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDoctorList">
+      <soap:operation soapAction="http://tempuri.org/IDoctorDataService/GetDoctorList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Doctor">
+      <soap:operation soapAction="http://tempuri.org/IDoctorDataService/Add_Doctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Doctor">
+      <soap:operation soapAction="http://tempuri.org/IDoctorDataService/Update_Doctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Doctor">
+      <soap:operation soapAction="http://tempuri.org/IDoctorDataService/Delete_Doctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegions">
+      <soap:operation soapAction="http://tempuri.org/IDoctorDataService/GetRegions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateDoctorByRegion">
+      <soap:operation soapAction="http://tempuri.org/IDoctorDataService/AuthenticateDoctorByRegion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorIdByRegion">
+      <soap:operation soapAction="http://tempuri.org/IDoctorDataService/GetDoctorIdByRegion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyDoctor">
+      <soap:operation soapAction="http://tempuri.org/IDoctorDataService/VerifyDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DoctorDataService">
+    <wsdl:port name="BasicHttpBinding_IDoctorDataService" binding="tns:BasicHttpBinding_IDoctorDataService">
+      <soap:address location="http://localhost:8004/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

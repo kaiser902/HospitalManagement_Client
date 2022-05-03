@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UserDataService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8003/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8003/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8003/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DataModelLib" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUserDataService_AuthenticateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserDataService_AuthenticateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserDataService_AuthenticateUserById_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserById" />
+  </wsdl:message>
+  <wsdl:message name="IUserDataService_AuthenticateUserById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserDataService_MD5Hash_InputMessage">
+    <wsdl:part name="parameters" element="tns:MD5Hash" />
+  </wsdl:message>
+  <wsdl:message name="IUserDataService_MD5Hash_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MD5HashResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserDataService_CheckId_replication_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckId_replication" />
+  </wsdl:message>
+  <wsdl:message name="IUserDataService_CheckId_replication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckId_replicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserDataService_Get_Id_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Id" />
+  </wsdl:message>
+  <wsdl:message name="IUserDataService_Get_Id_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_IdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUserDataService">
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserDataService/AuthenticateUser" message="tns:IUserDataService_AuthenticateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserDataService/AuthenticateUserResponse" message="tns:IUserDataService_AuthenticateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUserById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserDataService/AuthenticateUserById" message="tns:IUserDataService_AuthenticateUserById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserDataService/AuthenticateUserByIdResponse" message="tns:IUserDataService_AuthenticateUserById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MD5Hash">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserDataService/MD5Hash" message="tns:IUserDataService_MD5Hash_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserDataService/MD5HashResponse" message="tns:IUserDataService_MD5Hash_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckId_replication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserDataService/CheckId_replication" message="tns:IUserDataService_CheckId_replication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserDataService/CheckId_replicationResponse" message="tns:IUserDataService_CheckId_replication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Id">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserDataService/Get_Id" message="tns:IUserDataService_Get_Id_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserDataService/Get_IdResponse" message="tns:IUserDataService_Get_Id_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUserDataService" type="tns:IUserDataService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AuthenticateUser">
+      <soap:operation soapAction="http://tempuri.org/IUserDataService/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUserById">
+      <soap:operation soapAction="http://tempuri.org/IUserDataService/AuthenticateUserById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MD5Hash">
+      <soap:operation soapAction="http://tempuri.org/IUserDataService/MD5Hash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckId_replication">
+      <soap:operation soapAction="http://tempuri.org/IUserDataService/CheckId_replication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Id">
+      <soap:operation soapAction="http://tempuri.org/IUserDataService/Get_Id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserDataService">
+    <wsdl:port name="BasicHttpBinding_IUserDataService" binding="tns:BasicHttpBinding_IUserDataService">
+      <soap:address location="http://localhost:8002/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

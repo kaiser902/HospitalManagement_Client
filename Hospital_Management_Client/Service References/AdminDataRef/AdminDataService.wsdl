@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AdminDataService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8009/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8009/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8009/?xsd=xsd2" />
+      <xsd:import schemaLocation="http://localhost:8009/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DataModelLib" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAdminDataService_GetAdminList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminList" />
+  </wsdl:message>
+  <wsdl:message name="IAdminDataService_GetAdminList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminDataService_GetAdminDisplayed_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminDisplayed" />
+  </wsdl:message>
+  <wsdl:message name="IAdminDataService_GetAdminDisplayed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminDisplayedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminDataService_Add_Admin_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add_Admin" />
+  </wsdl:message>
+  <wsdl:message name="IAdminDataService_Add_Admin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Add_AdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminDataService_Update_Admin_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_Admin" />
+  </wsdl:message>
+  <wsdl:message name="IAdminDataService_Update_Admin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_AdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminDataService_Delete_Admin_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_Admin" />
+  </wsdl:message>
+  <wsdl:message name="IAdminDataService_Delete_Admin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_AdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminDataService_Get_Priviledge_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Priviledge" />
+  </wsdl:message>
+  <wsdl:message name="IAdminDataService_Get_Priviledge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_PriviledgeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminDataService_Get_Id_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Id" />
+  </wsdl:message>
+  <wsdl:message name="IAdminDataService_Get_Id_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_IdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAdminDataService">
+    <wsdl:operation name="GetAdminList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminDataService/GetAdminList" message="tns:IAdminDataService_GetAdminList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminDataService/GetAdminListResponse" message="tns:IAdminDataService_GetAdminList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminDisplayed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminDataService/GetAdminDisplayed" message="tns:IAdminDataService_GetAdminDisplayed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminDataService/GetAdminDisplayedResponse" message="tns:IAdminDataService_GetAdminDisplayed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_Admin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminDataService/Add_Admin" message="tns:IAdminDataService_Add_Admin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminDataService/Add_AdminResponse" message="tns:IAdminDataService_Add_Admin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Admin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminDataService/Update_Admin" message="tns:IAdminDataService_Update_Admin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminDataService/Update_AdminResponse" message="tns:IAdminDataService_Update_Admin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Admin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminDataService/Delete_Admin" message="tns:IAdminDataService_Delete_Admin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminDataService/Delete_AdminResponse" message="tns:IAdminDataService_Delete_Admin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Priviledge">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminDataService/Get_Priviledge" message="tns:IAdminDataService_Get_Priviledge_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminDataService/Get_PriviledgeResponse" message="tns:IAdminDataService_Get_Priviledge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Id">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminDataService/Get_Id" message="tns:IAdminDataService_Get_Id_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminDataService/Get_IdResponse" message="tns:IAdminDataService_Get_Id_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAdminDataService" type="tns:IAdminDataService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAdminList">
+      <soap:operation soapAction="http://tempuri.org/IAdminDataService/GetAdminList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminDisplayed">
+      <soap:operation soapAction="http://tempuri.org/IAdminDataService/GetAdminDisplayed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Admin">
+      <soap:operation soapAction="http://tempuri.org/IAdminDataService/Add_Admin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Admin">
+      <soap:operation soapAction="http://tempuri.org/IAdminDataService/Update_Admin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Admin">
+      <soap:operation soapAction="http://tempuri.org/IAdminDataService/Delete_Admin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Priviledge">
+      <soap:operation soapAction="http://tempuri.org/IAdminDataService/Get_Priviledge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Id">
+      <soap:operation soapAction="http://tempuri.org/IAdminDataService/Get_Id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AdminDataService">
+    <wsdl:port name="BasicHttpBinding_IAdminDataService" binding="tns:BasicHttpBinding_IAdminDataService">
+      <soap:address location="http://localhost:8008/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

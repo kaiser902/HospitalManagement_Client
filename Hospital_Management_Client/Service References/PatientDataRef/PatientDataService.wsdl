@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PatientDataService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8007/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8007/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8007/?xsd=xsd2" />
+      <xsd:import schemaLocation="http://localhost:8007/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DataModelLib" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPatientDataService_GetPatientList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientList" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_GetPatientList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_GetPatientListByDocId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientListByDocId" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_GetPatientListByDocId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientListByDocIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_CheckPatientForDoctor_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPatientForDoctor" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_CheckPatientForDoctor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPatientForDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_Add_Patient_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add_Patient" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_Add_Patient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Add_PatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_Update_Patient_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_Patient" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_Update_Patient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_PatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_Delete_Patient_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_Patient" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_Delete_Patient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_PatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_Add_Report_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add_Report" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_Add_Report_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Add_ReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_GetXrayData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetXrayData" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_GetXrayData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetXrayDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_GetEcgData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEcgData" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_GetEcgData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEcgDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_GetMriData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMriData" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_GetMriData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMriDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_getXrayImgLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:getXrayImgLocation" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_getXrayImgLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getXrayImgLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_getEcgImgLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEcgImgLocation" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_getEcgImgLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEcgImgLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_getMriImgLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMriImgLocation" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDataService_getMriImgLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMriImgLocationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPatientDataService">
+    <wsdl:operation name="GetPatientList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDataService/GetPatientList" message="tns:IPatientDataService_GetPatientList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDataService/GetPatientListResponse" message="tns:IPatientDataService_GetPatientList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientListByDocId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDataService/GetPatientListByDocId" message="tns:IPatientDataService_GetPatientListByDocId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDataService/GetPatientListByDocIdResponse" message="tns:IPatientDataService_GetPatientListByDocId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPatientForDoctor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDataService/CheckPatientForDoctor" message="tns:IPatientDataService_CheckPatientForDoctor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDataService/CheckPatientForDoctorResponse" message="tns:IPatientDataService_CheckPatientForDoctor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_Patient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDataService/Add_Patient" message="tns:IPatientDataService_Add_Patient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDataService/Add_PatientResponse" message="tns:IPatientDataService_Add_Patient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Patient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDataService/Update_Patient" message="tns:IPatientDataService_Update_Patient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDataService/Update_PatientResponse" message="tns:IPatientDataService_Update_Patient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Patient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDataService/Delete_Patient" message="tns:IPatientDataService_Delete_Patient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDataService/Delete_PatientResponse" message="tns:IPatientDataService_Delete_Patient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_Report">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDataService/Add_Report" message="tns:IPatientDataService_Add_Report_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDataService/Add_ReportResponse" message="tns:IPatientDataService_Add_Report_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXrayData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDataService/GetXrayData" message="tns:IPatientDataService_GetXrayData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDataService/GetXrayDataResponse" message="tns:IPatientDataService_GetXrayData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEcgData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDataService/GetEcgData" message="tns:IPatientDataService_GetEcgData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDataService/GetEcgDataResponse" message="tns:IPatientDataService_GetEcgData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMriData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDataService/GetMriData" message="tns:IPatientDataService_GetMriData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDataService/GetMriDataResponse" message="tns:IPatientDataService_GetMriData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getXrayImgLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDataService/getXrayImgLocation" message="tns:IPatientDataService_getXrayImgLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDataService/getXrayImgLocationResponse" message="tns:IPatientDataService_getXrayImgLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEcgImgLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDataService/getEcgImgLocation" message="tns:IPatientDataService_getEcgImgLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDataService/getEcgImgLocationResponse" message="tns:IPatientDataService_getEcgImgLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMriImgLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDataService/getMriImgLocation" message="tns:IPatientDataService_getMriImgLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDataService/getMriImgLocationResponse" message="tns:IPatientDataService_getMriImgLocation_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPatientDataService" type="tns:IPatientDataService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPatientList">
+      <soap:operation soapAction="http://tempuri.org/IPatientDataService/GetPatientList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientListByDocId">
+      <soap:operation soapAction="http://tempuri.org/IPatientDataService/GetPatientListByDocId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPatientForDoctor">
+      <soap:operation soapAction="http://tempuri.org/IPatientDataService/CheckPatientForDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Patient">
+      <soap:operation soapAction="http://tempuri.org/IPatientDataService/Add_Patient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Patient">
+      <soap:operation soapAction="http://tempuri.org/IPatientDataService/Update_Patient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Patient">
+      <soap:operation soapAction="http://tempuri.org/IPatientDataService/Delete_Patient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Report">
+      <soap:operation soapAction="http://tempuri.org/IPatientDataService/Add_Report" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXrayData">
+      <soap:operation soapAction="http://tempuri.org/IPatientDataService/GetXrayData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEcgData">
+      <soap:operation soapAction="http://tempuri.org/IPatientDataService/GetEcgData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMriData">
+      <soap:operation soapAction="http://tempuri.org/IPatientDataService/GetMriData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getXrayImgLocation">
+      <soap:operation soapAction="http://tempuri.org/IPatientDataService/getXrayImgLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEcgImgLocation">
+      <soap:operation soapAction="http://tempuri.org/IPatientDataService/getEcgImgLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMriImgLocation">
+      <soap:operation soapAction="http://tempuri.org/IPatientDataService/getMriImgLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PatientDataService">
+    <wsdl:port name="BasicHttpBinding_IPatientDataService" binding="tns:BasicHttpBinding_IPatientDataService">
+      <soap:address location="http://localhost:8006/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
